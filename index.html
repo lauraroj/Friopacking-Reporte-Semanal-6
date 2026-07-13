@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Semanal 6 · Laura Rojas · FrioPacking</title>
+<meta name="description" content="Reporte Semanal 6 de Laura Rojas, Trainee de Refrigeración Industrial en FrioPacking. Primera experiencia en obra durante la puesta en marcha del proyecto Qberries, Trujillo.">
+
+<!-- ============================================================
+     REPORTE SEMANAL 6 — FrioPacking
+     Versión visual / ejecutiva, en la misma familia que el
+     Reporte Semanal 4: tarjetas, cifras, acordeones por día.
+     Hoja de estilos: styles.css · Interactividad: script.js
+     Solo HTML semántico + CSS + JavaScript básico.
+     ============================================================ -->
+
+<!-- Tipografía: Inter (texto) + Sora (títulos), igual que el Reporte Semanal 4 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+<!-- ================= NAVEGACIÓN FIJA ================= -->
+<header class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#inicio">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">FrioPacking <span class="brand-sep">/</span> Reporte 06</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación del reporte">
+      <a href="#perfil">Perfil</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#resumen">Resumen</a>
+      <a href="#semana">Semana</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#reflexion">Reflexión</a>
+      <a href="#proximos-pasos">Próximos pasos</a>
+      <button type="button" class="nav-print" id="print-btn" title="Guardar / imprimir como PDF">
+        <span aria-hidden="true">⤓</span> PDF
+      </button>
+    </nav>
+  </div>
+  <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+</header>
+
+<main id="inicio">
+
+  <!-- ================= PORTADA ================= -->
+  <section class="hero" aria-label="Portada del reporte">
+    <img class="hero-img" src="assets/images/portada-proyecto-trujillo.jpg"
+         alt="Vista general del proyecto Qberries en Trujillo desde una zona elevada.">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="tag tag--light">Reporte Semanal · 06 · En curso</p>
+      <h1 class="hero-title">Semana 6 <span class="hero-title-sub">en obra</span></h1>
+      <p class="hero-line">Mi primera experiencia en obra</p>
+      <p class="hero-intro">Esta semana viví mi primera experiencia en obra durante la puesta en marcha del proyecto Qberries en Trujillo. Pude conectar los planos, presupuestos y modelos que había estudiado anteriormente con la ejecución real de una planta frigorífica.</p>
+      <dl class="hero-meta">
+        <div><dt>Practicante</dt><dd>Laura Rojas</dd></div>
+        <div><dt>Cargo</dt><dd>Trainee de Refrigeración Industrial</dd></div>
+        <div><dt>Empresa</dt><dd>FrioPacking</dd></div>
+        <div><dt>Proyecto</dt><dd>Qberries — Trujillo</dd></div>
+        <div><dt>Periodo</dt><dd>06/07/2026 – 10/07/2026</dd></div>
+      </dl>
+      <a href="#resumen" class="btn-cta">Ver reporte <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <!-- ================= NAVEGAR ENTRE REPORTES ================= -->
+  <!-- Reemplaza cada href="#semana-X" por el enlace público real de GitHub Pages
+       cuando lo tengas, por ejemplo:
+       <a href="https://lauraroj.github.io/Friopacking-Reporte-Semanal-1/">Semana 1</a> -->
+  <nav class="week-switch" aria-label="Navegar entre reportes semanales">
+    <div class="wrap week-switch-inner">
+      <p class="week-switch-label">Navegar entre reportes</p>
+      <div class="week-switch-links">
+        <!-- TODO: reemplazar por el enlace público de la Semana 1 -->
+        <a href="#semana-1" class="week-pill">Semana 1</a>
+        <!-- TODO: reemplazar por el enlace público de la Semana 2 -->
+        <a href="#semana-2" class="week-pill">Semana 2</a>
+        <!-- TODO: reemplazar por el enlace público de la Semana 3 -->
+        <a href="#semana-3" class="week-pill">Semana 3</a>
+        <!-- TODO: reemplazar por el enlace público de la Semana 4 -->
+        <a href="#semana-4" class="week-pill">Semana 4</a>
+        <!-- TODO: reemplazar por el enlace público de la Semana 5 -->
+        <a href="#semana-5" class="week-pill">Semana 5</a>
+        <!-- Reporte actual: sin enlace externo, solo referencia visual -->
+        <span class="week-pill week-pill--current" aria-current="page">Semana 6</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= SOBRE MÍ / PERFIL ================= -->
+  <section class="section section--sobre" id="perfil">
+    <div class="wrap sobre-grid">
+      <figure class="about-avatar reveal">
+        <!-- Si el archivo assets/images/laura-rojas.jpg no existe, se muestra
+             automáticamente el respaldo con iniciales (ver script.js). -->
+        <img src="assets/images/laura-rojas.jpg"
+             alt="Retrato de Laura Rojas, Trainee de Refrigeración Industrial en FrioPacking.">
+        <span class="avatar-fallback" aria-hidden="true">LR</span>
+      </figure>
+      <div class="about-text reveal">
+        <p class="eyebrow">Sobre mí</p>
+        <h2 class="section-title card-title">Quién soy</h2>
+        <h3 class="about-name">Laura Rojas</h3>
+        <p>Soy estudiante de último año de Ingeniería Biomédica en <strong>Boston University</strong>, con una concentración en Innovación Tecnológica. Crecí en Perú y he vivido más de diez años en Estados Unidos, lo que me ha permitido desarrollar una perspectiva global sobre ingeniería, innovación y negocios.</p>
+        <ul class="tag-list about-tags">
+          <li>Boston University</li>
+          <li>Biomedical Engineering</li>
+          <li>Innovación Tecnológica</li>
+          <li>Perú · Estados Unidos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRAYECTORIA DEL PRACTICUM ================= -->
+  <section class="section section--trayectoria" id="trayectoria">
+    <div class="wrap">
+      <p class="eyebrow">Trayectoria del practicum</p>
+      <h2 class="section-title card-title">Rotación de áreas</h2>
+      <p class="section-lead">Después de aprender cómo se diseña y presupuesta una planta, esta semana pude observar cómo esos planes se ejecutan y verifican en obra.</p>
+
+      <ol class="pipeline">
+        <li class="pipeline-step is-done">
+          <span class="pipeline-marker" aria-hidden="true">✓</span>
+          <div>
+            <p class="pipeline-week">Semana 1</p>
+            <p class="pipeline-name">Introducción a FrioPacking y sus áreas</p>
+            <p class="pipeline-status">Completado</p>
+          </div>
+        </li>
+        <li class="pipeline-step is-done">
+          <span class="pipeline-marker" aria-hidden="true">✓</span>
+          <div>
+            <p class="pipeline-week">Semanas 2–3</p>
+            <p class="pipeline-name">Ingeniería Mecánica</p>
+            <p class="pipeline-status">Completado</p>
+          </div>
+        </li>
+        <li class="pipeline-step is-done">
+          <span class="pipeline-marker" aria-hidden="true">✓</span>
+          <div>
+            <p class="pipeline-week">Semanas 3–4</p>
+            <p class="pipeline-name">Arquitectura</p>
+            <p class="pipeline-status">Completado</p>
+          </div>
+        </li>
+        <li class="pipeline-step is-done">
+          <span class="pipeline-marker" aria-hidden="true">✓</span>
+          <div>
+            <p class="pipeline-week">Semanas 4–5</p>
+            <p class="pipeline-name">Presupuestos</p>
+            <p class="pipeline-status">Completado</p>
+          </div>
+        </li>
+        <li class="pipeline-step is-current">
+          <span class="pipeline-marker" aria-hidden="true">→</span>
+          <div>
+            <p class="pipeline-week">Semana 5</p>
+            <p class="pipeline-name">Inicio en Operaciones</p>
+            <p class="pipeline-status">En curso</p>
+          </div>
+        </li>
+        <li class="pipeline-step is-current">
+          <span class="pipeline-marker" aria-hidden="true">→</span>
+          <div>
+            <p class="pipeline-week">Semana 6</p>
+            <p class="pipeline-name">Obra y puesta en marcha en Trujillo</p>
+            <p class="pipeline-status">En curso</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= RESUMEN EJECUTIVO ================= -->
+  <section class="section section--resumen" id="resumen">
+    <div class="wrap">
+      <p class="eyebrow">Resumen ejecutivo</p>
+      <h2 class="section-title card-title">La semana en cifras</h2>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-number">5</p>
+          <p class="stat-label">Días en proyecto</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">1</p>
+          <p class="stat-label">Primera visita a obra</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number stat-number--text">Qberries</p>
+          <p class="stat-label">Proyecto visitado</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">8</p>
+          <p class="stat-label">Fotografías integradas</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number stat-number--text">Puesta en marcha</p>
+          <p class="stat-label">Etapa observada</p>
+        </div>
+      </div>
+
+      <p class="resumen-tags-label">Temas de la semana</p>
+      <ul class="tag-list">
+        <li>Sensores de temperatura</li>
+        <li>PLCs</li>
+        <li>Tableros eléctricos</li>
+        <li>Tuberías y válvulas</li>
+        <li>Aislamiento</li>
+        <li>SSOMA</li>
+        <li>Valorizaciones</li>
+        <li>Comunicación en obra</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVIDADES POR DÍA (ACORDEÓN) ================= -->
+  <section class="section section--dias" id="semana">
+    <div class="wrap">
+      <p class="eyebrow">Semana en obra</p>
+      <h2 class="section-title card-title">Actividades por día</h2>
+      <p class="section-lead">Toca cada día para ver actividades, aprendizajes, reflexión y fotografías. Lunes está abierto como punto de partida.</p>
+
+      <div class="day-list">
+
+        <!-- ============ LUNES (abierto por defecto) ============ -->
+        <details class="day-card" id="lunes" open>
+          <summary class="day-summary">
+            <span class="day-tag">LUN · 06/07</span>
+            <span class="day-heading">
+              <span class="day-title">Primera visita a obra y puesta en marcha</span>
+              <span class="day-teaser">Recorrí por primera vez una planta que anteriormente solo había visto en planos y participé en las pruebas iniciales de sensores y equipos.</span>
+            </span>
+            <span class="day-chevron" aria-hidden="true"></span>
+          </summary>
+
+          <div class="day-body">
+            <div class="day-columns">
+              <div>
+                <h4 class="block-label">Actividades</h4>
+                <ul class="bullet-list">
+                  <li>Recorrido por los ambientes, túneles, compresores y evaporadores.</li>
+                  <li>Prueba individual de sensores de temperatura en los pallets.</li>
+                  <li>Revisión de conexiones con voltímetro y corrección de lecturas negativas.</li>
+                  <li>Observación de la limpieza de tecnopor cerca de los ventiladores.</li>
+                  <li>Seguimiento del vacío de tuberías y de las pruebas iniciales del compresor con amoníaco.</li>
+                </ul>
+
+                <h4 class="block-label">Aprendizajes</h4>
+                <ul class="bullet-list">
+                  <li>La puesta en marcha requiere probar cada componente antes de operar la planta.</li>
+                  <li>El nitrógeno, el vacío y la carga de amoníaco forman parte de etapas diferentes de preparación y prueba.</li>
+                  <li>Un detalle pequeño en un sensor o conexión puede afectar la lectura del sistema.</li>
+                </ul>
+
+                <blockquote class="day-quote">Ver en persona los equipos y ambientes que anteriormente solo conocía mediante planos me ayudó a comprender cómo el trabajo de ingeniería se convierte finalmente en una instalación real.</blockquote>
+
+                <ul class="tag-list day-tags">
+                  <li>Sensores</li><li>Vacío y amoníaco</li><li>Puesta en marcha</li>
+                </ul>
+              </div>
+
+              <div class="day-photos">
+                <h4 class="block-label">Fotografías</h4>
+                <figure class="photo">
+                  <img src="assets/images/avance-obra-interior.jpg" loading="lazy" decoding="async"
+                       alt="Vista interior de uno de los ambientes de la planta durante la puesta en marcha, con la estructura de techo, tableros y una puerta frigorífica al fondo.">
+                  <figcaption>Vista interior de uno de los ambientes de la planta durante la puesta en marcha.</figcaption>
+                </figure>
+                <figure class="photo">
+                  <img src="assets/images/ambiente-paneles-frigorificos.jpg" loading="lazy" decoding="async"
+                       alt="Ambiente interior con paneles frigoríficos, un tablero eléctrico y una puerta frigorífica cerrada, delimitado con cinta de seguridad.">
+                  <figcaption>Ambiente interior con paneles frigoríficos y equipos instalados.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- ============ MARTES ============ -->
+        <details class="day-card" id="martes">
+          <summary class="day-summary">
+            <span class="day-tag">MAR · 07/07</span>
+            <span class="day-heading">
+              <span class="day-title">Aislamiento, coordinación y seguridad</span>
+              <span class="day-teaser">Recorrí el ático con Fernando y aprendí a observar detalles de instalación, aislamiento, coordinación entre contratistas y seguridad en obra.</span>
+            </span>
+            <span class="day-chevron" aria-hidden="true"></span>
+          </summary>
+
+          <div class="day-body">
+            <div class="day-columns">
+              <div>
+                <h4 class="block-label">Actividades</h4>
+                <ul class="bullet-list">
+                  <li>Revisión de tuberías, válvulas, pintura e identificación.</li>
+                  <li>Observación de una tubería cuyo aislamiento debía rehacerse.</li>
+                  <li>Revisión de paneles, tornillos, sellado con Sikaflex y espacios pendientes.</li>
+                  <li>Identificación de una interferencia entre cables eléctricos y la instalación de una zeta.</li>
+                  <li>Acompañamiento al supervisor durante la documentación fotográfica de SSOMA.</li>
+                </ul>
+
+                <h4 class="block-label">Aprendizajes</h4>
+                <ul class="bullet-list">
+                  <li>Un aislamiento no uniforme puede causar condensación, goteo y entrada de calor.</li>
+                  <li>El trabajo de un contratista puede afectar directamente el avance de otra especialidad.</li>
+                  <li>Las fotografías y registros diarios ayudan a evitar malentendidos y comprobar avances.</li>
+                </ul>
+
+                <blockquote class="day-quote">Aprendí que revisar una obra requiere atención a detalles que no siempre se aprecian en un plano y que documentar el avance es tan importante como ejecutar el trabajo.</blockquote>
+
+                <ul class="tag-list day-tags">
+                  <li>Aislamiento</li><li>Coordinación</li><li>SSOMA</li>
+                </ul>
+              </div>
+
+              <div class="day-photos">
+                <h4 class="block-label">Fotografías</h4>
+                <figure class="photo">
+                  <img src="assets/images/tuberias-valvulas-atico.jpg" loading="lazy" decoding="async"
+                       alt="Tuberías aisladas y válvulas ubicadas en el ático de la planta.">
+                  <figcaption>Tuberías aisladas y válvulas ubicadas en el ático.</figcaption>
+                </figure>
+                <figure class="photo">
+                  <img src="assets/images/puerta-frigorifica.jpg" loading="lazy" decoding="async"
+                       alt="Puerta frigorífica y trabajadores con equipo de protección personal dentro de la planta.">
+                  <figcaption>Puerta frigorífica durante el avance de la obra.</figcaption>
+                </figure>
+                <figure class="photo">
+                  <img src="assets/images/instalacion-interior-altura.jpg" loading="lazy" decoding="async"
+                       alt="Trabajador en plataforma elevadora realizando instalaciones en altura junto a racks industriales dentro de la planta.">
+                  <figcaption>Trabajos de instalación en altura dentro de la planta.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- ============ MIÉRCOLES (sin fotografía) ============ -->
+        <details class="day-card" id="miercoles">
+          <summary class="day-summary">
+            <span class="day-tag">MIÉ · 08/07</span>
+            <span class="day-heading">
+              <span class="day-title">Valorizaciones y control de avances</span>
+              <span class="day-teaser">Trabajé en Excel con valorizaciones de contratistas y apoyé en la organización de fotografías para los reportes semanales.</span>
+            </span>
+            <span class="day-chevron" aria-hidden="true"></span>
+          </summary>
+
+          <div class="day-body">
+            <div class="day-columns day-columns--full">
+              <div>
+                <h4 class="block-label">Actividades</h4>
+                <ul class="bullet-list">
+                  <li>Distribución de montos a lo largo de aproximadamente cinco valorizaciones.</li>
+                  <li>Revisión de precio, avance, montos pagados y saldos pendientes.</li>
+                  <li>Verificación de fórmulas que tomaban datos de filas incorrectas.</li>
+                  <li>Revisión del archivo con Fernando.</li>
+                  <li>Clasificación de fotografías según el ambiente de la planta.</li>
+                </ul>
+
+                <h4 class="block-label">Aprendizajes</h4>
+                <ul class="bullet-list">
+                  <li>Un error en Excel puede afectar directamente el pago a un contratista.</li>
+                  <li>Las fórmulas deben revisarse individualmente, aunque el archivo parezca correcto.</li>
+                  <li>Los reportes semanales permiten relacionar el avance físico con la documentación.</li>
+                </ul>
+
+                <blockquote class="day-quote">Me gustó utilizar Excel en un proceso real y entender que una valorización no consiste solo en completar números, sino en verificar que el avance y los pagos tengan sentido.</blockquote>
+
+                <ul class="tag-list day-tags">
+                  <li>Valorizaciones</li><li>Excel</li><li>Reportes</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Sin fotografía: cuatro tarjetas pequeñas en su lugar -->
+            <div class="mini-grid">
+              <div class="mini-card">
+                <p class="mini-tag">01</p>
+                <h5>Valorizaciones</h5>
+              </div>
+              <div class="mini-card">
+                <p class="mini-tag">02</p>
+                <h5>30% de avance revisado</h5>
+              </div>
+              <div class="mini-card">
+                <p class="mini-tag">03</p>
+                <h5>Fórmulas</h5>
+              </div>
+              <div class="mini-card">
+                <p class="mini-tag">04</p>
+                <h5>Reportes fotográficos</h5>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- ============ JUEVES ============ -->
+        <details class="day-card" id="jueves">
+          <summary class="day-summary">
+            <span class="day-tag">JUE · 09/07</span>
+            <span class="day-heading">
+              <span class="day-title">PLCs, tableros y válvulas</span>
+              <span class="day-teaser">Con Christian conocí mejor la programación y los tableros eléctricos; por la tarde observé válvulas y la revisión de posibles fugas de amoníaco.</span>
+            </span>
+            <span class="day-chevron" aria-hidden="true"></span>
+          </summary>
+
+          <div class="day-body">
+            <div class="day-columns">
+              <div>
+                <h4 class="block-label">Actividades</h4>
+                <ul class="bullet-list">
+                  <li>Observación de la interfaz del proyecto en la oficina y en obra.</li>
+                  <li>Transferencia de programación desde la laptop hacia los PLCs.</li>
+                  <li>Apertura de un tablero y colocación de una batería de respaldo.</li>
+                  <li>Revisión de cableado identificado y coordinación con contratistas eléctricos.</li>
+                  <li>Observación de válvulas y revisión de posibles fugas de amoníaco.</li>
+                </ul>
+
+                <h4 class="block-label">Aprendizajes</h4>
+                <ul class="bullet-list">
+                  <li>Los PLCs deben comunicarse para que el sistema funcione de manera coordinada.</li>
+                  <li>La programación depende de que las conexiones eléctricas sean precisas.</li>
+                  <li>Mantener el cableado identificado facilita la revisión y corrección de errores.</li>
+                  <li>Las fugas deben identificarse antes de operar el sistema a plena capacidad.</li>
+                </ul>
+
+                <blockquote class="day-quote">Me sentí más involucrada porque me dieron la responsabilidad de abrir un tablero y cambiar la batería de respaldo de un PLC. Ver la electrónica aplicada también me ayudó a valorar más lo aprendido en la universidad.</blockquote>
+
+                <ul class="tag-list day-tags">
+                  <li>PLCs</li><li>Tableros</li><li>Válvulas</li>
+                </ul>
+              </div>
+
+              <div class="day-photos">
+                <h4 class="block-label">Fotografías</h4>
+                <figure class="photo">
+                  <img src="assets/images/plc-tablero-electrico.jpg" loading="lazy" decoding="async"
+                       alt="PLC y módulos de entradas y salidas con cableado rojo identificado dentro de un tablero eléctrico.">
+                  <figcaption>PLC, módulos y cableado identificado dentro de un tablero eléctrico.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- ============ VIERNES ============ -->
+        <details class="day-card" id="viernes">
+          <summary class="day-summary">
+            <span class="day-tag">VIE · 10/07</span>
+            <span class="day-heading">
+              <span class="day-title">Comunicación entre tableros y cierre de la visita</span>
+              <span class="day-teaser">En mi último día acompañé nuevamente a Christian, observé el avance de la programación y cerré mi primera experiencia completa en obra.</span>
+            </span>
+            <span class="day-chevron" aria-hidden="true"></span>
+          </summary>
+
+          <div class="day-body">
+            <div class="day-columns day-columns--full">
+              <div>
+                <h4 class="block-label">Actividades</h4>
+                <ul class="bullet-list">
+                  <li>Observación de la programación de diferentes tableros.</li>
+                  <li>Revisión de una extensión utilizada para mejorar la comunicación entre tableros.</li>
+                  <li>Recorrido por el ático para observar el avance de los contratistas.</li>
+                  <li>Verificación de protocolos de SSOMA con Fiorella.</li>
+                  <li>Avance del reporte semanal.</li>
+                </ul>
+
+                <h4 class="block-label">Aprendizajes</h4>
+                <ul class="bullet-list">
+                  <li>La distancia puede afectar la comunicación y transmisión de señales entre tableros.</li>
+                  <li>Los avances y problemas deben comunicarse constantemente al supervisor.</li>
+                  <li>Respetar los plazos y actualizar al equipo ayuda a evitar retrasos y malentendidos.</li>
+                </ul>
+
+                <blockquote class="day-quote">Terminé la semana satisfecha y agradecida por la oportunidad de aprender con el equipo del proyecto Qberries. Esta primera obra me permitió observar el proceso desde la planificación hasta la ejecución.</blockquote>
+
+                <ul class="tag-list day-tags">
+                  <li>Comunicación</li><li>SSOMA</li><li>Cierre de semana</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APRENDIZAJES CLAVE ================= -->
+  <section class="section section--aprendizajes" id="aprendizajes">
+    <div class="wrap">
+      <p class="eyebrow">Síntesis</p>
+      <h2 class="section-title card-title">Aprendizajes clave</h2>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h3 class="card-title">Puesta en marcha</h3>
+          <ul class="bullet-list bullet-list--tight">
+            <li>Pruebas antes de operación.</li>
+            <li>Verificación de sensores y equipos.</li>
+            <li>Atención a detalles y seguridad.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Automatización</h3>
+          <ul class="bullet-list bullet-list--tight">
+            <li>Programación de PLCs.</li>
+            <li>Comunicación entre tableros.</li>
+            <li>Coordinación entre programación y electricidad.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Gestión de obra</h3>
+          <ul class="bullet-list bullet-list--tight">
+            <li>Valorizaciones.</li>
+            <li>Reportes diarios.</li>
+            <li>Seguimiento de avances y plazos.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Trabajo multidisciplinario</h3>
+          <ul class="bullet-list bullet-list--tight">
+            <li>FrioPacking.</li>
+            <li>Frioteam.</li>
+            <li>SSOMA.</li>
+            <li>Contratistas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PERSONAS Y EQUIPOS ================= -->
+  <section class="section section--equipo" id="equipo">
+    <div class="wrap">
+      <p class="eyebrow">Interacciones</p>
+      <h2 class="section-title card-title">Personas y equipos con los que trabajé</h2>
+
+      <div class="card-grid card-grid--people">
+        <div class="person-card">
+          <span class="person-avatar" aria-hidden="true">F</span>
+          <h3 class="card-title">Fernando</h3>
+          <p>Recorridos técnicos, valorizaciones y revisión de obra.</p>
+        </div>
+        <div class="person-card">
+          <span class="person-avatar" aria-hidden="true">C</span>
+          <h3 class="card-title">Christian</h3>
+          <p>PLCs, programación y tableros eléctricos.</p>
+        </div>
+        <div class="person-card">
+          <span class="person-avatar" aria-hidden="true">F</span>
+          <h3 class="card-title">Fiorella</h3>
+          <p>SSOMA y cumplimiento de protocolos.</p>
+        </div>
+        <div class="person-card">
+          <span class="person-avatar" aria-hidden="true">E</span>
+          <h3 class="card-title">Eddie</h3>
+          <p>Pruebas de sensores de temperatura.</p>
+        </div>
+        <div class="person-card person-card--team">
+          <span class="person-avatar" aria-hidden="true">FP</span>
+          <h3 class="card-title">Equipo de FrioPacking y Frioteam</h3>
+          <p>Puesta en marcha y coordinación del proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONEXIÓN CON BOSTON UNIVERSITY ================= -->
+  <section class="section section--boston" id="boston">
+    <div class="wrap boston-grid">
+      <div>
+        <p class="eyebrow">Boston University</p>
+        <h2 class="section-title card-title">De la universidad a la obra</h2>
+        <p class="section-lead">Ver circuitos, conductores y sistemas de control aplicados en una planta real me ayudó a apreciar más temas que había estudiado en la universidad y que en su momento me parecieron complicados. Esta experiencia me mostró que los conceptos académicos adquieren mucho más sentido cuando puedo observar cómo se utilizan para controlar equipos, interpretar señales y resolver problemas reales.</p>
+      </div>
+      <ul class="tag-list boston-tags">
+        <li>Circuitos</li>
+        <li>Automatización</li>
+        <li>Ingeniería aplicada</li>
+        <li>Trabajo multidisciplinario</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= REFLEXIÓN FINAL ================= -->
+  <section class="section section--final" id="reflexion">
+    <div class="wrap wrap--final">
+      <div class="final-text reveal">
+        <p class="eyebrow eyebrow--light">Cierre de la semana</p>
+        <h2 class="section-title section-title--light card-title">Reflexión final</h2>
+        <p>Esta semana fue una de las experiencias más completas de mi práctica porque pude vivir por primera vez una obra durante su etapa de puesta en marcha. Conecté lo aprendido en planos, presupuestos y modelos con la ejecución real de una planta. También observé cómo la programación, las instalaciones eléctricas, las tuberías, la seguridad y la documentación deben avanzar de manera coordinada.</p>
+        <p>Me sentí más involucrada al participar en pruebas, valorizaciones, reportes y actividades dentro de los tableros eléctricos. El principal aprendizaje que me llevo de Trujillo es la importancia de comunicar los avances, documentar cada detalle y cumplir los plazos para evitar retrasos y malentendidos. Esta experiencia me permitió comprender mejor el recorrido completo de un proyecto, desde su planificación hasta su ejecución en obra.</p>
+      </div>
+      <figure class="photo photo--final reveal">
+        <img src="assets/images/visita-obra-epp.jpg" loading="lazy" decoding="async"
+             alt="Practicante utilizando casco, chaleco y equipo de protección personal durante la visita a obra.">
+        <figcaption>Mi primera experiencia en obra utilizando el equipo de protección personal requerido.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= PRÓXIMOS PASOS ================= -->
+  <section class="section section--proximos" id="proximos-pasos">
+    <div class="wrap">
+      <p class="eyebrow">Semana siguiente</p>
+      <h2 class="section-title card-title">Próximos pasos</h2>
+
+      <div class="card-grid card-grid--steps">
+        <div class="info-card info-card--step">
+          <p class="step-number">01</p>
+          <p>Seguir aprendiendo sobre programación de PLCs.</p>
+        </div>
+        <div class="info-card info-card--step">
+          <p class="step-number">02</p>
+          <p>Comprender mejor los componentes de los tableros eléctricos.</p>
+        </div>
+        <div class="info-card info-card--step">
+          <p class="step-number">03</p>
+          <p>Continuar observando cómo se completa la puesta en marcha de una planta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= PIE DE PÁGINA ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-name">Laura Rojas</p>
+      <p class="footer-role">Trainee de Refrigeración Industrial</p>
+      <p class="footer-role">Boston University</p>
+    </div>
+    <div class="footer-right">
+      <p>FrioPacking</p>
+      <p>Reporte Semanal 6 · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Volver al inicio">↑</button>
+
+<!-- Visor de imagen ampliada (misma foto, sin galería separada) -->
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">✕</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
